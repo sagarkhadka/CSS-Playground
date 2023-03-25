@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+}
+
+section {
+  height: 100dvh;
+}
+
+$size: 30px;
+$offset: 120px;
+
+.section-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-container {
+  width: calc($size * 2);
+  aspect-ratio: 1;
+  background-color: #dadada;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 10s linear infinite;
+
+  .circle {
+
+    background-color: orangered;
+    border-radius: 50%;
+    position: absolute;
+    width: $size;
+    aspect-ratio: 1;
+    left: calc($size / 2);
+    top: calc($size / 2);
+    transform: translate(
+      calc(cos(var(--degrees)) * $offset),
+      calc(sin(var(--degrees)) * $offset)
+    );
+  }
+}
+
+$total: 8;
+@for $i from 0 through ($total - 1) {
+  .circle:nth-of-type(#{$i + 1}) {
+    --degrees: calc(#{$i} * (360deg / #{$total}));
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

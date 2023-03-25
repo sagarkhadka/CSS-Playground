@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+}
+
+section {
+  height: 100dvh;
+}
+
+.section-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-container {
+  width: 60px;
+  aspect-ratio: 1;
+  background-color: #dadada;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 10s linear infinite;
+}
+.circle-container .circle {
+  background-color: orangered;
+  border-radius: 50%;
+  position: absolute;
+  width: 30px;
+  aspect-ratio: 1;
+  left: 15px;
+  top: 15px;
+  transform: translate(calc(cos(var(--degrees)) * 120px), calc(sin(var(--degrees)) * 120px));
+}
+
+.circle:nth-of-type(1) {
+  --degrees: calc(0 * (360deg / 8));
+}
+
+.circle:nth-of-type(2) {
+  --degrees: calc(1 * (360deg / 8));
+}
+
+.circle:nth-of-type(3) {
+  --degrees: calc(2 * (360deg / 8));
+}
+
+.circle:nth-of-type(4) {
+  --degrees: calc(3 * (360deg / 8));
+}
+
+.circle:nth-of-type(5) {
+  --degrees: calc(4 * (360deg / 8));
+}
+
+.circle:nth-of-type(6) {
+  --degrees: calc(5 * (360deg / 8));
+}
+
+.circle:nth-of-type(7) {
+  --degrees: calc(6 * (360deg / 8));
+}
+
+.circle:nth-of-type(8) {
+  --degrees: calc(7 * (360deg / 8));
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */
